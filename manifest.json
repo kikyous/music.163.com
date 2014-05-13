@@ -4,6 +4,12 @@
         "48": "images/music.png",
         "128": "images/music.png"
     },
+    "omnibox": {
+        "keyword": "m"
+    },
+    "background": {
+      "scripts": ["js/jquery-2.1.1.min.js", "js/background.js"]
+    },
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
@@ -24,6 +30,7 @@
         }
     ],
     "permissions" : [
-        "tabs"
+        "tabs",
+        "*://music.163.com/*"
         ]
 }
