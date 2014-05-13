@@ -1,0 +1,29 @@
+{
+    "icons": {
+        "16": "images/music.png",
+        "48": "images/music.png",
+        "128": "images/music.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "19": "images/music.png",
+            "38": "images/music.png"
+        },
+        "default_title": "网易云音乐",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2,
+    "name": "网易云音乐",
+    "version": "1.0",
+    "description": "网易云音乐",
+    "content_scripts": [
+        {
+            "matches": ["*://music.163.com/"],
+            "js": ["js/jquery-2.1.1.min.js", "js/do_action.js"]
+        }
+    ],
+    "permissions" : [
+        "tabs"
+        ]
+}
