@@ -4,11 +4,8 @@
         "48": "images/music.png",
         "128": "images/music.png"
     },
-    "omnibox": {
-        "keyword": "m"
-    },
     "background": {
-      "scripts": ["js/jquery-2.1.1.min.js", "js/background.js"]
+      "scripts": ["js/global.js", "js/background.js"]
     },
     "browser_action": {
         "default_popup": "popup.html",
@@ -32,5 +29,28 @@
     "permissions" : [
         "tabs",
         "*://music.163.com/*"
-        ]
+        ],
+    "commands": {
+      "nxt": {
+        "suggested_key": {
+          "default": "Ctrl+Right"
+        },
+        "description": "Next song",
+        "global": true
+      },
+      "prv": {
+        "suggested_key": {
+          "default": "Ctrl+Left"
+        },
+        "description": "Prev song",
+        "global": true
+      },
+      "ply": {
+        "suggested_key": {
+          "default": "Ctrl+Left"
+        },
+        "description": "Play/Pause",
+        "global": true
+      }
+    }
 }
