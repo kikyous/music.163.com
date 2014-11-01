@@ -27,6 +27,7 @@
         }
     ],
     "permissions" : [
+        "notifications",
         "tabs",
         "*://music.163.com/*"
         ],

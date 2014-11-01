@@ -7,4 +7,4 @@ function tabDo(callback){
       var tab = tabs[0].id;
       callback(tab);
       });
-}
+};
