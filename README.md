@@ -24,6 +24,11 @@ Pull Requests Welcome
 
 使用方法
 ======
-把项目clone下来或者下载
+* 把项目clone下来或者下载
 https://github.com/kikyous/music.163.com/archive/master.zip
-,解压，然后在扩展管理页面选择“加载正在开发的扩展程序”中选中解压出来的文件夹
+,解压，然后在扩展管理页面选择“加载正在开发的扩展程序”中选中解压出来的文件夹。
+
+* 点击扩展图标或者打开http://music.163.com/
+第一次换歌时会请求通知权限，同意即可。
+
+* 点击扩展程序管理页面(chrome://extensions/)下方的“键盘快捷键”，设置全局快捷键。
