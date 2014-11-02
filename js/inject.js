@@ -1,8 +1,8 @@
-function notifyMe(icon, body) {
+function notifyMe(icon, body, title) {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
 
-  var notification = new Notification('网易云音乐', {
+  var notification = new Notification('网易云音乐'+title, {
     tag: 'music.163.com',
     icon: icon,
     body: body,
@@ -13,21 +13,24 @@ function notifyMe(icon, body) {
 };
 $(function(){
   var player = $('#g_player'),
-      element = player.find('.head img')[0],
-      bubbles = false;
+      element = player.find('.head img')[0];
 
   var observer = new WebKitMutationObserver(function (mutations) {
     mutations.forEach(attrModified);
   });
-  observer.observe(element, { attributes: true, subtree: bubbles });
+  observer.observe(element, { attributes: true });
 
-  function attrModified(mutation) {
-    var newValue = mutation.target.getAttribute('src'),
-        img = newValue.split('?')[0] + '?param=150x150',
+  function attrModified(event, title) {
+    var img = element.src.split('?')[0] + '?param=150x150',
         song = player.find('a.fc1.f-fl').text(),
         artisit = player.find('span.by span').attr('title');
-    notifyMe(img, song + ' - ' + artisit);
+    notifyMe(img, song + ' - ' + artisit, title || '');
   };
+
+  player.find('a.ply').click(function(){
+    var title = $(this).hasClass('pas') ? '(已暂停)' : '' ;
+    attrModified(null, title);
+  });
 });
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
   if(message instanceof Array){

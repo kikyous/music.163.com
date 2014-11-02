@@ -23,11 +23,10 @@
     "content_scripts": [
         {
             "matches": ["*://music.163.com/"],
-            "js": ["js/jquery-2.1.1.min.js", "js/do_action.js"]
+            "js": ["js/jquery-2.1.1.min.js", "js/inject.js"]
         }
     ],
     "permissions" : [
-        "notifications",
         "tabs",
         "*://music.163.com/*"
         ],
