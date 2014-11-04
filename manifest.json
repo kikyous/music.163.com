@@ -1,8 +1,8 @@
 {
     "icons": {
-        "16": "images/music.png",
-        "48": "images/music.png",
-        "128": "images/music.png"
+        "16": "images/logo_16.png",
+        "48": "images/logo_48.png",
+        "128": "images/logo_128.png"
     },
     "background": {
       "scripts": ["js/global.js", "js/background.js"]
@@ -10,8 +10,8 @@
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "19": "images/music.png",
-            "38": "images/music.png"
+            "19": "images/logo_19.png",
+            "38": "images/logo_38.png"
         },
         "default_title": "网易云音乐",
         "default_popup": "popup.html"
@@ -23,7 +23,7 @@
     "content_scripts": [
         {
             "matches": ["*://music.163.com/"],
-            "js": ["js/jquery-2.1.1.min.js", "js/inject.js"]
+            "js": ["js/zepto.min.js", "js/content.js"]
         }
     ],
     "permissions" : [
@@ -32,23 +32,14 @@
         ],
     "commands": {
       "nxt": {
-        "suggested_key": {
-          "default": "Ctrl+Right"
-        },
         "description": "Next song",
         "global": true
       },
       "prv": {
-        "suggested_key": {
-          "default": "Ctrl+Left"
-        },
         "description": "Prev song",
         "global": true
       },
       "ply": {
-        "suggested_key": {
-          "default": "Ctrl+Left"
-        },
         "description": "Play/Pause",
         "global": true
       }
