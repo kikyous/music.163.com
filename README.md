@@ -18,9 +18,7 @@ Pull Requests Welcome
 
 * 菜单操作
 
-![](https://ruby-china-files.b0.upaiyun.com/photo/2014/e3f144bb024a804f3f233f99b44b8e66.png)
-
-这个极简的设计很赞吧！！！
+![](https://ruby-china-files.b0.upaiyun.com/photo/2014/19d180b0626463c2e22c4901a61ec0ec.png)
 
 使用方法
 ======
