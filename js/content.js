@@ -11,34 +11,56 @@ function notifyMe(icon, body, title) {
   setTimeout(function(){notification.close()}, 5000);
   notification.onclick = function(x) { window.focus(); };
 };
+
+window.onbeforeunload = function(){
+  chrome.storage.local.set({'playing': false});
+};
 $(function(){
   var player = $('#g_player'),
-      element = player.find('.head img')[0];
+      element = player.find('.head img')[0],
+      playing = player.find('a.ply')[0];
 
   var observer = new WebKitMutationObserver(function (mutations) {
     mutations.forEach(attrModified);
   });
   observer.observe(element, { attributes: true });
 
-  function attrModified(event, title) {
-    var img = element.src.split('?')[0] + '?param=150x150',
-        song = player.find('a.fc1.f-fl').text(),
-        artisit = player.find('span.by span').attr('title');
-    notifyMe(img, song + ' - ' + artisit, title || '');
+  var observer1 = new WebKitMutationObserver(function (mutations) {
+    mutations.forEach(function(mutation){
+      if (mutation.target.classList.length != mutation.oldValue.split(' ').length){
+        result = mutation.target.classList.contains('pas');
+        attrModified(null, result ? '' : '(已暂停)');
+        chrome.storage.local.set({'playing': result});
+      }
+    });
+  });
+  observer1.observe(playing, { attributes: true, attributeOldValue: true });
+
+  function getSong(){
+    return player.find('a.fc1.f-fl').text();
   };
 
-  player.find('a.ply').click(function(){
-    var title = $(this).hasClass('pas') ? '(已暂停)' : '' ;
-    attrModified(null, title);
-  });
-});
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
-  if(message instanceof Array){
-    message[0](message(1), message(2));
-  } else if( /^\./.test(message) ){
-    $(message)[0].click();
-    sendResponse($('.fc1.f-fl').text());
-  } else {
-    sendResponse($('.fc1.f-fl').text());
+  function getArtist(){
+    return player.find('span.by span').attr('title');
   };
+
+  function getCover(){
+    return element.src.split('?')[0] + '?param=150x150';
+  };
+
+  function attrModified(event, title) {
+    notifyMe(getCover(), getSong() + ' - ' + getArtist(), title || '');
+  };
+
+  chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
+    if( /^\./.test(message) ){
+      $(message)[0].click();
+    }
+    sendResponse({
+      playing: player.find('a.ply').hasClass('pas'),
+      song: getSong(),
+      artist: getArtist(),
+      cover: getCover()
+      });
+  });
 });
