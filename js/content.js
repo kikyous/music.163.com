@@ -45,7 +45,7 @@ $(function(){
   };
 
   function getCover(){
-    return element.src.split('?')[0] + '?param=150x150';
+    return player.find('.head img')[0].src.split('?')[0] + '?param=150x150';
   };
 
   function attrModified(event, title) {
