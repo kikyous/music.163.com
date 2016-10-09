@@ -4,29 +4,25 @@
 项目地址 https://github.com/kikyous/music.163.com
 Pull Requests Welcome
 
+使用方法
+======
+点击链接在 chrome 应用商店安装
+https://chrome.google.com/webstore/detail/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E8%BE%85%E5%8A%A9/dmidlfboljckpijkmbmolidjimmfelho?hl=zh-CN
+
 功能介绍
 ======
 * 全局快捷键
 
-![](https://ruby-china-files.b0.upaiyun.com/photo/2014/af7cca1af664b840ffbdd557e2442094.png)
+![](http://7xkxfz.com1.z0.glb.clouddn.com/2016-10-09-2.jpg)
 *注: 快捷键要在扩展程序管理页面(chrome://extensions/)
 下方的“键盘快捷键”中设置*
 
 * 换歌通知
 
-![](https://ruby-china-files.b0.upaiyun.com/photo/2014/16213ee2688d04877c886b7481f94d35.png)
+![](http://ww3.sinaimg.cn/large/006y8lVajw1f8m3xl1wtnj30zk0m878r.jpg)
 
 * 菜单操作
 
 ![](https://ruby-china-files.b0.upaiyun.com/photo/2014/19d180b0626463c2e22c4901a61ec0ec.png)
 
-使用方法
-======
-* 把项目clone下来或者下载
-https://github.com/kikyous/music.163.com/archive/master.zip
-,解压，然后在扩展管理页面选择“加载正在开发的扩展程序”中选中解压出来的文件夹。
 
-* 点击扩展图标或者打开http://music.163.com/
-第一次换歌时会请求通知权限，同意即可。
-
-* 点击扩展程序管理页面(chrome://extensions/)下方的“键盘快捷键”，设置全局快捷键。
