@@ -18,9 +18,9 @@
         "default_popup": "popup.html"
     },
     "manifest_version": 2,
-    "name": "网易云音乐",
-    "version": "1.1",
-    "description": "网易云音乐辅助",
+    "name": "网易云音乐辅助",
+    "version": "1.2",
+    "description": "网易云音乐辅助扩展，全局快捷键，换歌通知，菜单操作",
     "content_scripts": [
         {
             "matches": ["*://music.163.com/"],
