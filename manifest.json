@@ -14,13 +14,13 @@
             "19": "images/logo_19.png",
             "38": "images/logo_38.png"
         },
-        "default_title": "网易云音乐",
+        "default_title": "网易云音乐辅助",
         "default_popup": "popup.html"
     },
     "manifest_version": 2,
     "name": "网易云音乐",
     "version": "1.0",
-    "description": "网易云音乐",
+    "description": "网易云音乐辅助",
     "content_scripts": [
         {
             "matches": ["*://music.163.com/"],
